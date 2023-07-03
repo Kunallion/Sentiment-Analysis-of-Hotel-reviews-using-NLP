@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Feedback</title>
+  <style>
+    /* Reset default browser styles */
+    body, h1, h2, p, ul, li {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Global styles */
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.5;
+      background-color: #f2f2f2;
+    }
+
+    header {
+      background-color: #222;
+      color: #fff;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+    
+    header ul {
+      list-style: none;
+      display: flex;
+    }
+    
+    header ul li {
+      margin-right: 10px;
+    }
+    
+    header ul li a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+    
+    header ul li a:hover {
+      background-color: #333;
+    }
+
+    nav ul {
+      list-style: none;
+    }
+
+    nav ul li {
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px;
+      transition: all 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      background-color: #333;
+      border-radius: 5px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 100px 0;
+      background-image: url('/static/images/img.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero-content {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+      display: inline-block;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      color: #222;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero p {
+      font-size: 24px;
+      margin-bottom: 30px;
+      color: #555;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 15px 30px;
+      background-color: #ff5e14;
+      color: #fff;
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #e54311;
+    }
+
+    .testimonial {
+      padding: 50px 0;
+      text-align: center;
+    }
+
+    .testimonial h2 {
+      font-size: 36px;
+      margin-bottom: 40px;
+      color: #222;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .testimonial-card {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      margin-bottom: 40px;
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .testimonial-card p {
+      margin-bottom: 20px;
+      color: #555;
+    }
+
+    .testimonial-card cite {
+      font-style: italic;
+      color: #777;
+    }
+
+    footer {
+      background-color: #222;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .feedback-form {
+      text-align: center;
+      margin: 50px auto;
+      max-width: 500px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .feedback-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      resize: vertical;
+    }
+
+    .feedback-form button {
+      padding: 10px 20px;
+      background-color: #ff5e14;
+      color: #fff;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .feedback-form button:hover {
+      background-color: #e54311;
+    }
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    
+    ::-webkit-scrollbar-track {
+      background-color: #f2f2f2;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background-color: #888;
+      border-radius: 5px;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Rooms</a></li>
+        <li><a href="#">Reviews</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Welcome to Hotel Feedback</h1>
+      <p>Share your experience with us</p>
+      <section class="feedback-form">
+    <h2>Leave Your Feedback</h2>
+    <form method="POST" action="/predict">
+
+     <label for="review"></label>
+        <textarea id="review" name="name" rows="4" cols="50"></textarea><br>
+      
+    
+  </section>
+      <input type="submit" class="cta-button" value="Leave Feedback">
+    </form>
+    </div>
+  </section>
+  
+  <section class="testimonial">
+    <h2>Guest Testimonials</h2>
+    <div class="testimonial-container">
+      <div class="testimonial-card">
+        <p>"I recently stayed at this hotel for a business trip, and I was thoroughly impressed. The service was exceptional, and the staff went above and beyond to ensure my stay was comfortable. The amenities were top-notch, and the hotel's location made it convenient for my meetings. I would definitely choose this hotel again for future trips."</p>
+        <cite>- Raj Kapoor (CTO, Loops pvt ltd)</cite>
+      </div>
+      <div class="testimonial-card">
+        <p>"What a delightful stay! The hotel exceeded my expectations in every way. The room was stylish and modern, with all the amenities I needed. The hotel's restaurant served delicious food, and the staff was knowledgeable and attentive. I left feeling rejuvenated and would recommend this hotel to anyone seeking a luxurious and relaxing getaway."</p>
+        <cite>- Kanika Sharma (Tripadvisor)</cite>
+      </div>
+    </div>
+  </section>
+
+  
+  
+  <footer>
+    <p>&copy; 2023 Hotel Feedback. All rights reserved.</p>
+  </footer>
+</body>
+</html>
